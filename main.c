@@ -1,16 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h> 
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void convertToUppercase(char *sPtr);
 
-int main(int argc, char *argv[]) {
-	int integer1,sum;
-	printf("hi\n");
-	printf("i am 0452014\n");
-	sum=0;//sum的初始值 
-	for(integer1=0;integer1<10;integer1++){
-		sum=sum+integer1;
+int main(void) {
+	char string[] = "HOmeWOrk TONYtony";
+	
+	printf("The string before conversion is: %s\n",string);
+	convertToUppercase(string);
+	printf("The string after conversion is: %s\n",string);
+	//return 0;
+}
+
+void convertToUppercase(char *sPtr) {
+	while (*sPtr != '\0') {
+		*sPtr = toupper(*sPtr);
+		++sPtr;
 	}
-	printf("sum=%d\n",sum);//印出輸出總和 
-	return 0;
 }
